@@ -27,9 +27,18 @@ public class EventService {
         return daoEvent.findAll();
     }
 
+    public long countOfdata(String data){
+        return daoEvent.countOfdata(data);
+    }
+
+    public long countOfEventType(String eventType){
+        return daoEvent.countOfEventType(eventType);
+    }
+
     public Event findByeventId(int eventId){
         return daoEvent.findByeventId(eventId);
     }
+
 
     public Event save(Event event){
         return daoEvent.save(event);
@@ -44,10 +53,6 @@ public class EventService {
 
     }
 
-    public void sentFormExe(String message){
-
-        pruducer.sendTopic(message);
-
-    }
+    public void sentFormExe(String message){ pruducer.sendTopic(message); }
 
 }

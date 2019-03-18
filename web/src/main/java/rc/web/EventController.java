@@ -22,6 +22,17 @@ public class EventController {
         return eventService.findAll();
     }
 
+    @GetMapping(value = "/event/desc/{data}")
+    public long countOfdata(@PathVariable final String data){
+        return eventService.countOfdata(data);
+    }
+
+    @GetMapping(value = "/event/title/{type}")
+    public long countOfEventType(@PathVariable final String type){
+        return eventService.countOfEventType(type);
+    }
+
+
     @GetMapping(value = "/company/{id}")
     public Event getEventById(@PathVariable final int id){
         return eventService.findByeventId(id);

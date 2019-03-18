@@ -24,5 +24,12 @@ public class DaoEvent {
         return eventRepository.save(event);
     }
 
+    public long countOfdata(String data){
+        return eventRepository.countBydata(data);
+    }
+    public long countOfEventType(String eventType){
+        return eventRepository.countByeventType(eventType);
+    }
+
 
 }

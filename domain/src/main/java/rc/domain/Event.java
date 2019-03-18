@@ -1,5 +1,8 @@
 package rc.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +15,8 @@ public class Event {
     @Column(name = "id", updatable = false, nullable = false)
     private int eventId;
     @Column(name = "title", columnDefinition = "NVARCHAR(255)")
-    private String event_type;
+    @JsonProperty("event_type")
+    private String eventType;
     @Column(name = "description", columnDefinition = "NVARCHAR(255)")
     private String data;
     @Column(name = "timestamp", columnDefinition = "NVARCHAR(255)")
@@ -29,12 +33,12 @@ public class Event {
         this.eventId = eventId;
     }
 
-    public String getEvent_type() {
-        return event_type;
+    public String getEventType() {
+        return eventType;
     }
 
-    public void setEvent_type(String event_type) {
-        this.event_type = event_type;
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
     }
 
     public String getData() {
