@@ -24,12 +24,11 @@ public class OpenFile implements CommandLineRunner {
             Process process = processBuilder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line = null;
-            int i=0;
             while ((line = reader.readLine()) != null) {
-                if(line.length() > 15 && i < 3){
+                if(line.length() > 15 ){
                     System.out.println(line);
                     eventService.sentFormExe(line);
-                    i++;
+
                 }
             }
 
