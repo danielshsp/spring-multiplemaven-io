@@ -74,10 +74,11 @@ public class EventService {
             while ((line = reader.readLine()) != null) {
                 if (line.length() > 15) {
                     // Artificial delay of 1s for demonstration purposes
-                    Thread.sleep(2000L);
                     try {
-                        sentFormExe(line);
+                             Thread.sleep(2000L);
+                             sentFormExe(line);
                     } catch (ExecutionException e) {
+
                         e.printStackTrace();
                     }
 
@@ -89,10 +90,7 @@ public class EventService {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
-
 
         return null;
     }
